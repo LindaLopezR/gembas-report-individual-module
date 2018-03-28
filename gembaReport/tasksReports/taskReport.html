@@ -1,0 +1,12 @@
+<template name="taskReport">
+	<p class="titulo">
+		<i class="{{getIcon}} icon {{getColor}}"></i> {{task.name}}
+	</p>
+	<hr>
+
+	<p>
+		{{#each getDocs}}
+			{{>docsReport}}
+		{{/each}}
+	</p>
+</template>

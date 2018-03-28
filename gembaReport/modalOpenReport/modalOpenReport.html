@@ -1,0 +1,21 @@
+<template name="modalOpenReport">
+
+  <div class="ui small modal smallModal" id="modalOpenReport">
+    <div class="header">
+      {{_ 'reports'}}
+    </div>
+    <div class="content">
+      <div class="description">
+        <p>{{_ 'report_dialog'}}</p>
+      </div>
+    </div>
+    <div class="actions">
+      <a href="{{getOpenUrl}}" target="_blank">
+        <div class="ui approve button">
+          <i class="checkmark icon"></i> {{_ 'report_dialog_view'}}
+        </div>
+      </a>
+    </div>
+  </div>
+
+</template>

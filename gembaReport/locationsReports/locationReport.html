@@ -1,0 +1,24 @@
+<template name="locationReport">
+
+  <div class="columnScroll">
+    <div class="box contentReport">
+      <p class="titulo titulo-azul">
+        {{location.name}}
+        <span class="float-right">{{getScore}}%</span>
+      </p>
+
+      {{#if location.description}}
+        <p class="info">{{_ "description"}}<i class="caret right icon"></i></p>
+        <p class="more">{{location.description}}</p>
+      {{/if}}
+      
+      <hr class="linea-azul">
+      
+      {{#each getTasks report location}}
+          {{>taskReport location=../location task=this report=../report}}
+      {{/each}}
+      
+    </div>
+  </div>
+
+</template>

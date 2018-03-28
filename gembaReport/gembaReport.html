@@ -1,0 +1,49 @@
+<template name="gembaReport">
+
+  <div class="ui active dimmer" id="loadingReport">
+    <div class="ui loader"></div>
+  </div>
+
+  {{>modalOpenReport}}
+
+  <div class="container">
+    <div class="row titleUser">
+      <a href="#" id="printReportUrl" style="display: none"></a>
+      <div class="col-md-12">
+        <h2><i class="history icon"></i> {{_ "gemba_report"}}</h2>
+        <button class="ui right floated icon button teal" style=" margin-top: -45px;" id="reportGemba">
+          <i class="file pdf outline icon"></i> {{_ "pdf"}}
+        </button>
+      </div>
+    </div>
+
+    <div class="row" style="overflow-x: auto">
+      <div id="page-wrap">
+        <div class="columnScroll">
+          <div class="box ">
+            <p class="titulo">{{_ "general_information"}}</p>
+            <hr class="linea-azul">
+
+            <p class="titulo-mini">{{_ "name"}}</p>
+            <p class="parrafo-view"><h2>{{gemba.name}}</h2></p>
+
+            <p class="titulo-mini">{{_ "score"}}</p>
+            <p class="parrafo-view"><h2>{{report.score}}%</h2></p>
+
+            <p class="titulo-mini">{{_ "description"}}</p>
+            <p class="parrafo-view">{{gemba.description}}</p>
+
+            <p class="titulo-mini">{{_ "date"}}</p>
+            <p class="parrafo-view">{{labelDate}}</p>
+          </div>
+        </div>
+
+        {{#each locations}}
+          {{>locationReport location=this report=../report tasks=../tasks}}
+        {{/each}}
+
+      </div>
+    </div>
+  </div>
+
+</template>
